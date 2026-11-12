@@ -14,10 +14,9 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy application source
 COPY . .
 
-# Expose port (Railway passes $PORT dynamically)
+# Expose port
 ENV PORT=8000
 EXPOSE 8000
 
-# Start FastAPI server
-CMD ["sh", "-c", "uvicorn backend.app:app --host 0.0.0.0 --port ${PORT}"]
-
+# Start server safely via main.py
+CMD ["python", "main.py"]
