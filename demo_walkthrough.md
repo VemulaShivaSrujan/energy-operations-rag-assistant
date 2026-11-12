@@ -137,3 +137,4 @@ To complete the required Railway deployment:
 3. On [Railway.app](https://railway.app/), click **"New Project"** $\to$ **"Deploy from GitHub repo"**.
 4. Select the repository.
 5. Railway reads `railway.json` and `Procfile` automatically and deploys the service on an external URL (e.g., `https://greenko-energy-ops-rag.up.railway.app`).
+
