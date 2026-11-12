@@ -1,0 +1,8 @@
+question,expected_source,expected_keywords,domain
+What should be checked for inverter derating?,solar_inverter_sop.md,cooling fans|dust filters|ambient temperature|DC input imbalance,Solar
+How should gearbox vibration be investigated?,wind_turbine_maintenance.md,vibration spectrum|oil level|oil contamination|wind gust,Wind
+What should be reviewed for generation deviation before escalation?,grid_operations_note.md,forecast|irradiation|wind speed|curtailment|frequency,Grid
+What safety steps are required before spillway gate inspection?,hydro_safety_brief.md,lockout-tagout|water level|upstream flow|evacuation,Hydro
+What actions are required if BESS cell temperature exceeds 55C?,bess_storage_sop.md,emergency trip|isolate DC racks|fire suppression|evacuate,Storage
+When should a gas sample be collected from a substation transformer?,substation_transformer_sop.md,Buchholz relay|gas alarm|Dissolved Gas Analysis|DGA,Substation
+What is the recommended procedure for repairing a Boeing 737 aircraft engine?,NONE,UNANSWERABLE_OUT_OF_DOMAIN,Out of Domain
