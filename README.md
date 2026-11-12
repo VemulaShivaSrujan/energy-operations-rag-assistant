@@ -2,9 +2,10 @@
 
 [![Python 3.11](https://img.shields.io/badge/Python-3.11-blue.svg)](https://www.python.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.115-green.svg)](https://fastapi.tiangolo.com/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Railway](https://img.shields.io/badge/Railway-Live%20Deployment-success.svg)](https://web-production-c5218cb7.up.railway.app)
 [![Tests: 10/10 Passed](https://img.shields.io/badge/Tests-10%2F10%20Passed-success.svg)]()
 
+> **Live Deployment Link:** [https://web-production-c5218cb7.up.railway.app](https://web-production-c5218cb7.up.railway.app)  
 > **Mission-Critical SOP Intelligence & Verification Engine for Renewable Energy Assets**  
 > Operational decision support for Solar PV, Wind Farms, Hydroelectric Plants, Battery Energy Storage Systems (BESS), and Substation Grid Operations.
 
@@ -222,7 +223,9 @@ curl -X POST "http://localhost:8000/api/evaluate"
 
 ## 7. Railway Deployment Guide
 
-This project is pre-configured for instant Railway deployment with both `Procfile`, `railway.json`, and a production `Dockerfile`.
+**Live Deployment URL:** [https://web-production-c5218cb7.up.railway.app](https://web-production-c5218cb7.up.railway.app)
+
+This project is deployed live on Railway with `Procfile`, `railway.json`, and `main.py` entrypoint.
 
 ### Option A: 1-Click Git Deploy
 1. Push this repository to GitHub:
