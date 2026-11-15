@@ -526,46 +526,6 @@
       margin-top: 10px;
       line-height: 1.5;
     }
-    /* Presentation Defense Guide */
-    .guide-section {
-      background: var(--card-bg);
-      border: 1px solid var(--surface-border);
-      border-radius: 12px;
-      padding: 24px;
-      margin-bottom: 20px;
-    }
-    .guide-title {
-      font-size: 17px;
-      font-weight: 700;
-      color: var(--accent);
-      margin-bottom: 12px;
-    }
-    .guide-content p, .guide-content li {
-      font-size: 14px;
-      color: #cbd5e1;
-      margin-bottom: 8px;
-    }
-    .guide-content ul {
-      padding-left: 20px;
-    }
-    .qa-box {
-      background: #0d1a22;
-      border: 1px solid var(--surface-border);
-      border-radius: 8px;
-      padding: 14px;
-      margin-bottom: 10px;
-    }
-    .qa-question {
-      font-weight: 700;
-      color: #f1f5f9;
-      margin-bottom: 6px;
-      font-size: 14px;
-    }
-    .qa-answer {
-      font-size: 13px;
-      color: #94a3b8;
-      line-height: 1.5;
-    }
   </style>
 </head>
 <body>
@@ -590,7 +550,6 @@
     <button class="tab-btn active" onclick="switchTab('assistant')">Operations Assistant</button>
     <button class="tab-btn" onclick="switchTab('knowledge-base')">Knowledge Base Explorer</button>
     <button class="tab-btn" onclick="switchTab('benchmark')">Evaluation Benchmark</button>
-    <button class="tab-btn" onclick="switchTab('defense')">Presentation & Defense Guide</button>
   </div>
 
   <main>
@@ -765,47 +724,6 @@
               <!-- Populated via JS -->
             </tbody>
           </table>
-        </div>
-      </div>
-    </div>
-
-    <!-- TAB 4: DEFENSE & INTERVIEW GUIDE -->
-    <div id="tab-defense" class="tab-content">
-      <div class="guide-section">
-        <div class="guide-title">1-Minute Executive Case Study Pitch</div>
-        <div class="guide-content">
-          <p><em>“In renewable energy operations at Greenko, control room operators and site engineers manage wind farms, solar fields, hydro stations, and BESS installations. When alarms sound—like solar inverter overtemperature, wind gearbox vibration, or transformer gas accumulation—engineers must consult lengthy, disparate SOPs under tight operational deadlines. Human error or unverified guesses can lead to multi-million-rupee asset damage or grid curtailment penalties.”</em></p>
-          <p><em>“Our solution is a mission-critical Energy Operations Document RAG Assistant. It combines hybrid lexical and semantic retrieval with strict citation attribution and an automated multi-step hallucination verification engine. If the retrieval score is below our safety threshold, the system safely refuses rather than hallucinating. On our benchmark suite, the system achieves 100% Recall@1, 100% safety refusal accuracy, and sub-5ms end-to-end latency.”</em></p>
-        </div>
-      </div>
-
-      <div class="guide-section">
-        <div class="guide-title">Key Engineering & Hyperparameter Justifications</div>
-        <div class="guide-content">
-          <ul>
-            <li><strong>Hybrid Retrieval Alpha (α = 0.55):</strong> Balances lexical matching (55% semantic character n-grams, 45% TF-IDF n-grams). Lexical is essential in energy operations to match exact alarm codes, temperatures (e.g. <code>75C</code>, <code>55C</code>), and equipment identifiers (e.g. <code>Buchholz</code>, <code>LOTO</code>). Semantic n-grams handle paraphrasing (e.g. "overheating" -> "temperature exceeds").</li>
-            <li><strong>Safety Refusal Threshold (Score &lt; 0.25):</strong> A calibrated empirical boundary. In-domain operational queries consistently score 0.27 to 0.44, whereas out-of-domain queries (e.g. aviation, trivia) score below 0.19. This completely prevents catastrophic out-of-domain hallucinations.</li>
-            <li><strong>Atomic Claim Grounding Threshold (40% substantive overlap):</strong> Deconstructs generated answers into discrete declarative statements and verifies overlap against source context words. Prevents generation of fictitious operational parameters.</li>
-            <li><strong>Dual Generation Architecture:</strong> Fully deterministic, zero-dependency local synthesizer for mission-critical offline operation + seamless plug-and-play cloud LLM adapter (OpenAI / Gemini) via environment variables.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="guide-section">
-        <div class="guide-title">Anticipated Interviewer Questions & Model Answers</div>
-        <div class="guide-content">
-          <div class="qa-box">
-            <div class="qa-question">Q: Why did you use RAG rather than fine-tuning an LLM?</div>
-            <div class="qa-answer">A: Operational SOPs change frequently (e.g. updated safety protocols or new inverter models). Fine-tuning is static, prone to hallucination, costly, and lacks traceable source citations. RAG provides instant document updates, explicit document citations, and verifiable proof of evidence for safety compliance.</div>
-          </div>
-          <div class="qa-box">
-            <div class="qa-question">Q: How do you prove the system won't hallucinate in a high-risk electrical environment?</div>
-            <div class="qa-answer">A: We implement a two-stage guardrail: First, an Out-of-Domain Relevance Filter rejects queries with low retrieval scores before generation. Second, our Factuality Verifier deconstructs the answer into atomic claims, checking each claim's substantive word overlap against retrieved context. If claims are ungrounded, the system flags a warning and withholds the advice.</div>
-          </div>
-          <div class="qa-box">
-            <div class="qa-question">Q: What is calculated in Python vs generated by the LLM?</div>
-            <div class="qa-answer">A: Document chunking, TF-IDF feature matrices, cosine similarity calculations, citation mapping, claim tokenization, and evidence grounding overlap scores are 100% computed deterministically in Python. The LLM (or local synthesizer) only handles language synthesis formatted with the strict constraints provided by Python.</div>
-          </div>
         </div>
       </div>
     </div>
